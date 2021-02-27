@@ -1,3 +1,21 @@
 index:
     path: /
     controller: App\Controller\LuckyController::number
+
+numberSsr:
+    path: /numberSsr
+    controller: App\Controller\LuckyController::numberSsr
+
+# added for testing layout pages on frontend
+layoutGreetingsSsr:
+    path: /layout/greetings
+    controller: App\Controller\LuckyController::greetings
+
+apiNumber:
+    path: /api/number
+    controller: App\Controller\LuckyController::apiNumber
+
+apiGreetings:
+    path: /api/greetings
+    controller: App\Controller\LuckyController::apiGreetings
+

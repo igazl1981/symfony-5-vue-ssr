@@ -2,7 +2,7 @@
 
 {% block body %}
     <div id="app">
-    <h1>Your lucky number is {{ number }}</h1>
+        <!-- This file is not rendered on server side so the H1 will shown on the load !-->
+        <h1>Your lucky number is {{ number }}</h1>
     </div>
-
 {% endblock body %}
