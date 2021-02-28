@@ -25,3 +25,18 @@ The server should be installed with
 * npm (for compiling frontend)
 
 
+# Added authentication
+
+Adding `LexikJWTAuthenticationBundle` by running `composer req jwt-auth`
+
+It will install the `LexikJWTAuthenticationBundle` and the dependencies which contains `symfony/security-bundle`.
+
+Added `symfony/maker-bundle` with `composer req maker` so I could add User easily.
+
+The `bin/console make:user` creates the `User` class and the `UserProvider`.
+
+To generate the necessary files for Lexik the `bin/console lexik:jwt:generate-keypair` command will create the files under `config/jwt`.
+
+If the files are generated manually with `openssl` the passphrase have to be identical with the configured passphrase in the `.env` file.
+
+The token expiration can be set by `token_ttl: 3600` config under `lexik_jwt_authentication`.

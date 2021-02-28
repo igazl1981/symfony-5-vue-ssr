@@ -11,6 +11,10 @@ layoutGreetingsSsr:
     path: /layout/greetings
     controller: App\Controller\LuckyController::greetings
 
+layoutGreetingsSecureSsr:
+    path: /layout/greetings/secure
+    controller: App\Controller\LuckyController::greetings
+
 apiNumber:
     path: /api/number
     controller: App\Controller\LuckyController::apiNumber
@@ -19,3 +23,9 @@ apiGreetings:
     path: /api/greetings
     controller: App\Controller\LuckyController::apiGreetings
 
+apiGreetingsSecure:
+    path: /api/secure/greetings
+    controller: App\Controller\LuckyController::apiGreetingsSecure
+
+api_login_check:
+    path: /api/login_check

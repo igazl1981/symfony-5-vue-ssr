@@ -51,7 +51,24 @@ class LuckyController extends AbstractController
         return $this->render('numberSsr.html.twig', ['ssr' => $renderedJs]);
     }
 
+    function greetingsSecure(): Response
+    {
+
+        $ssrData = [
+            'url' => '/layout/greetings/secure'
+        ];
+        $renderedJs = $this->renderJs($ssrData);
+
+        return $this->render('numberSsr.html.twig', ['ssr' => $renderedJs]);
+    }
+
     function apiGreetings(Request $request): JsonResponse
+    {
+        $name = $request->get('name');
+        return $this->json(['greeting' => "Hello $name"]);
+    }
+
+    function apiGreetingsSecure(Request $request): JsonResponse
     {
         $name = $request->get('name');
         return $this->json(['greeting' => "Hello $name"]);

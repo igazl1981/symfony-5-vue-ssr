@@ -11,7 +11,7 @@
       <div>
         <router-link :to="{name: 'home'}">To Home</router-link>
         <router-link :to="{name: 'numberSsr'}">To number ssr</router-link>
-        <router-link :to="{name: 'layoutGreetingsSecure'}">To layout greetings secure</router-link>
+        <router-link :to="{name: 'layoutGreetings'}">To layout greetings</router-link>
       </div>
     </div>
     <div v-if="greeting">
@@ -27,12 +27,30 @@ export default {
   data() {
     return {
       name: '',
-      greeting: ''
+      greeting: '',
+      token: '',
     }
+  },
+  mounted() {
+    fetch("/api/login_check", {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: '{"username": "test_user", "password": "12345"}'
+    })
+        .then(response => {
+          response.json()
+              .then(value => this.token = value.token)
+        })
   },
   methods: {
     getGreeting() {
-      fetch('/api/greetings?name=' + this.name,)
+      fetch('/api/secure/greetings?name=' + this.name,{
+        headers: {
+          'Authorization': 'Bearer ' + this.token
+        }
+      })
           .then(response => {
             console.log(response)
             response.json().then(value => this.greeting = value.greeting)

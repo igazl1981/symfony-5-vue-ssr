@@ -8,6 +8,7 @@
       <div>
         <router-link :to="{name: 'home'}">To Home</router-link>
         <router-link :to="{name: 'layoutGreetings'}">To layout greetings</router-link>
+        <router-link :to="{name: 'layoutGreetingsSecure'}">To layout greetings secure</router-link>
       </div>
     </div>
     <div v-if="number >= 0">

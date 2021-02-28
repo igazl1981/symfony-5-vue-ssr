@@ -5,6 +5,7 @@ import DefaultLayout from "../Layout/DefaultLayout";
 import HomePage from "../components/HomePage";
 import NumberPage from "../components/NumberPage";
 import GreetingsPage from "../components/GreetingsPage";
+import GreetingsSecurePage from "../components/GreetingsSecurePage";
 
 Vue.use(Router);
 
@@ -30,6 +31,11 @@ const router = new Router({
                     path: "greetings",
                     name: 'layoutGreetings',
                     component: GreetingsPage
+                },
+                {
+                    path: "greetings/secure",
+                    name: 'layoutGreetingsSecure',
+                    component: GreetingsSecurePage
                 }
             ]
         }
