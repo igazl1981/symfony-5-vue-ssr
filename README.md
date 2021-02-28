@@ -40,3 +40,6 @@ To generate the necessary files for Lexik the `bin/console lexik:jwt:generate-ke
 If the files are generated manually with `openssl` the passphrase have to be identical with the configured passphrase in the `.env` file.
 
 The token expiration can be set by `token_ttl: 3600` config under `lexik_jwt_authentication`.
+
+The authentication is updated to use HttpOnly Cookie for storing the Tokens. The `lexik_jwt_authentication.token_extractors` contains the configuration. 
+The `App\Listener\AuthenticationSuccessListener` contains the logic to add the cookie to the response and remove token from the response. 

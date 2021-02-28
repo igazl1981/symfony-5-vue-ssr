@@ -39,10 +39,11 @@ export default {
       },
       body: '{"username": "test_user", "password": "12345"}'
     })
-        .then(response => {
-          response.json()
-              .then(value => this.token = value.token)
-        })
+        // This is removed because the BEARER Coookie will contain the authentication
+        // .then(response => {
+        //   response.json()
+        //       .then(value => this.token = value.token)
+        // })
   },
   methods: {
     getGreeting() {
